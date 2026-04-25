@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>আমাদের পণ্যসমূহ - Tanzim Hardware</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="products.css" />
+  </head>
+  <body class="bg-gray-50 flex flex-col min-h-screen">
+    <header class="bg-blue-900 text-white shadow-md sticky top-0 z-50">
+      <div
+        class="container mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <a
+          href="/index.html"
+          class="text-xl font-bold tracking-wider hover:text-yellow-400 transition"
+        >
+          <i class="fas fa-arrow-left mr-2"></i> TANZIM HARDWARE
+        </a>
+
+        <div class="relative w-1/2 md:w-1/3">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="পণ্য খুঁজুন..."
+            class="w-full bg-blue-800 text-white px-4 py-2 rounded-full border border-blue-700 outline-none focus:border-yellow-400 placeholder-blue-300 transition"
+          />
+          <i class="fas fa-search absolute right-4 top-3 text-blue-300"></i>
+        </div>
+      </div>
+    </header>
+
+    <main class="flex-grow container mx-auto px-4 py-10">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-black text-blue-900 mb-4 italic">
+          আমাদের সংগ্রহে যা আছে
+        </h2>
+        <div
+          class="h-1.5 w-24 bg-yellow-500 mx-auto rounded-full shadow-sm"
+        ></div>
+        <p class="mt-4 text-gray-600 font-medium">
+          ২০টি সেরা মানের হার্ডওয়্যার সরঞ্জাম আপনার জন্য
+        </p>
+      </div>
+
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+        id="productGrid"
+      ></div>
+
+      <div id="noProduct" class="hidden text-center py-20">
+        <i class="fas fa-search text-5xl text-gray-300 mb-4"></i>
+        <p class="text-xl text-gray-500">
+          দুঃখিত, এই নামে কোনো পণ্য পাওয়া যায়নি!
+        </p>
+      </div>
+    </main>
+
+    <footer class="bg-gray-900 py-8 mt-12 border-t-4 border-yellow-500">
+      <div class="container mx-auto px-4 text-center">
+        <p class="text-white font-bold mb-2 italic">
+          তানজিম হার্ডওয়্যার এন্ড টুলস
+        </p>
+        <p class="text-gray-400 text-sm italic">
+          &copy; ২০২২ - ২০২৬ তানজিম আহমেদ। সর্বস্বত্ব সংরক্ষিত।
+        </p>
+      </div>
+    </footer>
+
+    <script src="products.js"></script>
+  </body>
+</html>

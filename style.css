@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600;700&display=swap");
+
+body {
+  font-family: "Hind Siliguri", sans-serif;
+}
+
+.navbar {
+  background-color: #1e3a8a; /* Blue 900 */
+}
+
+.nav-link {
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #facc15; /* Yellow 400 */
+}
+
+.cta-button {
+  background-color: #eab308; /* Yellow 500 */
+  color: #1e3a8a;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #ca8a04;
+}
+
+.hero-section {
+  background-color: #2563eb; /* Blue 600 */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+}
+
+.stat-card {
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+  background-color: #111827; /* Gray 900 */
+  border-top: 4px solid #eab308;
+}

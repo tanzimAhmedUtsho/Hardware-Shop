@@ -1,7 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600;700&display=swap");
 
+/* পুরো পেজের উচ্চতা ঠিক রাখার জন্য */
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
 body {
   font-family: "Hind Siliguri", sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 .navbar {
@@ -45,4 +54,7 @@ body {
 .footer {
   background-color: #111827; /* Gray 900 */
   border-top: 4px solid #eab308;
+  /* নিশ্চিত করবে ফুটার নিচে থাকবে */
+  margin-top: auto;
+  width: 100%;
 }

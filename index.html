@@ -11,7 +11,7 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="bg-gray-50 text-gray-800">
+  <body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
     <header class="navbar text-white shadow-lg sticky top-0 z-50">
       <div
         class="container mx-auto px-4 py-4 flex justify-between items-center"
@@ -31,47 +31,49 @@
       </div>
     </header>
 
-    <section class="hero-section text-white py-20 px-4 text-center">
-      <div class="container mx-auto">
-        <h2 class="text-4xl md:text-5xl font-bold mb-4">
-          সেরা মানের হার্ডওয়্যার সরঞ্জাম এখন এক ঠিকানায়
-        </h2>
-        <p class="text-lg md:text-xl mb-8">
-          ২০২২ সাল থেকে আমরা আপনার আস্থার সাথে সেবা দিয়ে আসছি।
-        </p>
-        <a
-          href="#products"
-          class="bg-white text-blue-900 font-bold py-3 px-8 rounded-full shadow-xl hover:bg-gray-100 transition"
-          >পণ্য দেখুন</a
+    <main class="flex-grow">
+      <section class="hero-section text-white py-20 px-4 text-center">
+        <div class="container mx-auto">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4">
+            সেরা মানের হার্ডওয়্যার সরঞ্জাম এখন এক ঠিকানায়
+          </h2>
+          <p class="text-lg md:text-xl mb-8">
+            ২০২২ সাল থেকে আমরা আপনার আস্থার সাথে সেবা দিয়ে আসছি।
+          </p>
+          <a
+            href="#products"
+            class="bg-white text-blue-900 font-bold py-3 px-8 rounded-full shadow-xl hover:bg-gray-100 transition"
+            >পণ্য দেখুন</a
+          >
+        </div>
+      </section>
+
+      <section id="about" class="py-12 bg-white">
+        <div
+          class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center"
         >
-      </div>
-    </section>
+          <div class="stat-card p-6 border rounded-xl">
+            <i class="fas fa-user-tie text-4xl text-blue-600 mb-4"></i>
+            <h3 class="text-xl font-bold">মালিক</h3>
+            <p class="text-gray-600">তানজিম আহমেদ</p>
+          </div>
+          <div class="stat-card p-6 border rounded-xl">
+            <i class="fas fa-calendar-check text-4xl text-blue-600 mb-4"></i>
+            <h3 class="text-xl font-bold">প্রতিষ্ঠিত</h3>
+            <p class="text-gray-600">২০২২ সাল থেকে সক্রিয়</p>
+          </div>
+          <div class="stat-card p-6 border rounded-xl">
+            <i class="fas fa-tools text-4xl text-blue-600 mb-4"></i>
+            <h3 class="text-xl font-bold">গুণগত মান</h3>
+            <p class="text-gray-600">১০০% অরিজিনাল প্রোডাক্ট</p>
+          </div>
+        </div>
+      </section>
+    </main>
 
-    <section id="about" class="py-12 bg-white">
-      <div
-        class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center"
-      >
-        <div class="stat-card p-6 border rounded-xl">
-          <i class="fas fa-user-tie text-4xl text-blue-600 mb-4"></i>
-          <h3 class="text-xl font-bold">মালিক</h3>
-          <p class="text-gray-600">তানজিম আহমেদ</p>
-        </div>
-        <div class="stat-card p-6 border rounded-xl">
-          <i class="fas fa-calendar-check text-4xl text-blue-600 mb-4"></i>
-          <h3 class="text-xl font-bold">প্রতিষ্ঠিত</h3>
-          <p class="text-gray-600">২০২২ সাল থেকে সক্রিয়</p>
-        </div>
-        <div class="stat-card p-6 border rounded-xl">
-          <i class="fas fa-tools text-4xl text-blue-600 mb-4"></i>
-          <h3 class="text-xl font-bold">গুণগত মান</h3>
-          <p class="text-gray-600">১০০% অরিজিনাল প্রোডাক্ট</p>
-        </div>
-      </div>
-    </section>
-
-    <footer class="footer py-10">
+    <footer class="footer py-10 mt-auto">
       <div class="container mx-auto px-4 text-center text-gray-400">
-        <h3 class="text-white text-xl font-bold mb-2">তানজিম হার্ডওয়্যার</h3>
+        <h3 class="text-white text-xl font-bold mb-2">তানজিম হার্ডওয়্যার</h3>
         <p class="mb-4">প্রোপ্রাইটর: তানজিম আহমেদ</p>
         <p class="text-sm">
           &copy; ২০২২ - ২০২৬ তানজিম আহমেদ। সর্বস্বত্ব সংরক্ষিত।

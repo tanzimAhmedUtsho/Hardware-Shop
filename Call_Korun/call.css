@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700&display=swap");
+
+body {
+  font-family: "Hind Siliguri", sans-serif;
+}
+
+#contactCard {
+  animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s forwards;
+}
+
+.form-input:focus {
+  box-shadow: 0 0 15px rgba(37, 99, 235, 0.1);
+}

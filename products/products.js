@@ -2,6 +2,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const productGrid = document.getElementById("productGrid");
   const searchInput = document.getElementById("searchInput");
   const noProduct = document.getElementById("noProduct");
+  const cartToggle = document.getElementById("cartToggle");
+  const cartSidebar = document.getElementById("cartSidebar");
+  const closeCart = document.getElementById("closeCart");
+  const cartOverlay = document.getElementById("cartOverlay");
+  const cartItemsContainer = document.getElementById("cartItems");
+  const cartCountLabel = document.getElementById("cartCount");
+  const cartTotalLabel = document.getElementById("cartTotal");
+
+  // কার্ট ডাটা লোড করা
+  let cart = JSON.parse(localStorage.getItem("tanzim_cart")) || [];
 
   // ২০টি হার্ডওয়্যার পণ্যের ডাটা লিস্ট
   const products = [
@@ -170,9 +180,9 @@ document.addEventListener("DOMContentLoaded", () => {
               <p class="text-xs text-gray-500 mb-4 italic h-8 overflow-hidden">${product.desc}</p>
               <div class="flex justify-between items-center">
                   <span class="text-xl font-black text-blue-700">৳ ${product.price}</span>
-                  <a href="call.html" class="bg-blue-900 text-white p-2.5 rounded-lg hover:bg-yellow-500 hover:text-blue-900 transition shadow-md">
+                  <button onclick="addToCart('${product.name}', '${product.price}', '${product.icon}')" class="bg-blue-900 text-white p-2.5 rounded-lg hover:bg-yellow-500 hover:text-blue-900 transition shadow-md">
                       <i class="fas fa-shopping-cart text-sm"></i>
-                  </a>
+                  </button>
               </div>
           </div>
         `;
@@ -181,8 +191,73 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // কার্ট ফাংশনালিটি
+  window.addToCart = (name, price, icon) => {
+    const product = { name, price, icon, id: Date.now() };
+    cart.push(product);
+    updateCart();
+    toggleCart(true);
+  };
+
+  window.removeFromCart = (id) => {
+    cart = cart.filter((item) => item.id !== id);
+    updateCart();
+  };
+
+  function updateCart() {
+    localStorage.setItem("tanzim_cart", JSON.stringify(cart));
+    cartCountLabel.innerText = cart.length;
+
+    cartItemsContainer.innerHTML = "";
+    let total = 0;
+
+    cart.forEach((item) => {
+      const priceNum = parseInt(item.price.replace(/,/g, ""));
+      total += priceNum;
+
+      const itemEl = document.createElement("div");
+      itemEl.className =
+        "flex items-center justify-between bg-gray-50 p-3 rounded-xl border border-gray-200";
+      itemEl.innerHTML = `
+        <div class="flex items-center space-x-3">
+          <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600">
+            <i class="fas ${item.icon}"></i>
+          </div>
+          <div>
+            <h5 class="text-sm font-bold text-gray-800">${item.name}</h5>
+            <p class="text-xs text-blue-600 font-bold">৳ ${item.price}</p>
+          </div>
+        </div>
+        <button onclick="removeFromCart(${item.id})" class="text-red-400 hover:text-red-600 p-2">
+          <i class="fas fa-trash-alt"></i>
+        </button>
+      `;
+      cartItemsContainer.appendChild(itemEl);
+    });
+
+    cartTotalLabel.innerText = `৳ ${total.toLocaleString()}`;
+    if (cart.length === 0) {
+      cartItemsContainer.innerHTML = `<p class="text-center text-gray-400 mt-10">কার্ট খালি আছে</p>`;
+    }
+  }
+
+  function toggleCart(isOpen) {
+    if (isOpen) {
+      cartSidebar.classList.remove("translate-x-full");
+      cartOverlay.classList.remove("hidden");
+    } else {
+      cartSidebar.classList.add("translate-x-full");
+      cartOverlay.classList.add("hidden");
+    }
+  }
+
+  cartToggle.addEventListener("click", () => toggleCart(true));
+  closeCart.addEventListener("click", () => toggleCart(false));
+  cartOverlay.addEventListener("click", () => toggleCart(false));
+
   // পেজ লোড হওয়ার সময় সব পণ্য দেখানো
   displayProducts(products);
+  updateCart();
 
   // সার্চ ফিল্টার লজিক
   searchInput.addEventListener("input", (e) => {

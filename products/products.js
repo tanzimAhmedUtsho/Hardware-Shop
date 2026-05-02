@@ -206,13 +206,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateCart() {
     localStorage.setItem("tanzim_cart", JSON.stringify(cart));
-    cartCountLabel.innerText = cart.length;
+    // কার্ট সংখ্যা বাংলায় দেখানো
+    cartCountLabel.innerText = cart.length
+      .toString()
+      .replace(/\d/g, (d) => "০১২৩৪৫৬৭৮৯"[d]);
 
     cartItemsContainer.innerHTML = "";
     let total = 0;
 
     cart.forEach((item) => {
-      const priceNum = parseInt(item.price.replace(/,/g, ""));
+      // বাংলা সংখ্যাকে ইংরেজিতে রূপান্তর করে হিসাব করা
+      const enPrice = item.price
+        .replace(/[০-৯]/g, (d) => "০১২৩৪৫৬৭৮৯".indexOf(d))
+        .replace(/,/g, "");
+      const priceNum = parseInt(enPrice) || 0;
       total += priceNum;
 
       const itemEl = document.createElement("div");
@@ -235,7 +242,11 @@ document.addEventListener("DOMContentLoaded", () => {
       cartItemsContainer.appendChild(itemEl);
     });
 
-    cartTotalLabel.innerText = `৳ ${total.toLocaleString()}`;
+    // মোট টাকাকে কমা সহ বাংলায় রূপান্তর করা
+    const totalBn = total
+      .toLocaleString("en-IN")
+      .replace(/\d/g, (d) => "০১২৩৪৫৬৭৮৯"[d]);
+    cartTotalLabel.innerText = `৳ ${totalBn}`;
     if (cart.length === 0) {
       cartItemsContainer.innerHTML = `<p class="text-center text-gray-400 mt-10">কার্ট খালি আছে</p>`;
     }

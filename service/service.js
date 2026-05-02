@@ -82,8 +82,8 @@ backBtn.className =
 
 // কানেকশন লজিক
 backBtn.onclick = () => {
-  // যদি আপনার index.html একই ফোল্ডারে থাকে
-  window.location.href = "index.html";
+  // ইনডেক্স ফাইলটি এক ধাপ পেছনে (Parent folder) থাকায় ../ ব্যবহার করা হয়েছে
+  window.location.href = "../index.html";
 };
 
 backBtnWrapper.appendChild(backBtn);

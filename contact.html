@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>যোগাযোগ - Tanzim Hardware</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+    <header
+      class="navbar text-white shadow-lg sticky top-0 z-50 transition-all duration-300"
+    >
+      <div
+        class="container mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <h1 class="text-2xl font-bold tracking-wider">
+          TANZIM <span class="text-yellow-400">HARDWARE</span>
+        </h1>
+        <nav class="hidden md:flex space-x-8 font-medium">
+          <a href="index.html" class="nav-link">হোম</a>
+          <a href="/products/products.html" class="nav-link">পণ্যসমূহ</a>
+          <a href="/service/service.html" class="nav-link">সেবাসমূহ</a>
+          <a href="contact.html" class="nav-link border-b-2 border-yellow-400"
+            >যোগাযোগ</a
+          >
+        </nav>
+        <a
+          href="/Call_Korun/call.html"
+          class="cta-button font-bold py-2 px-5 rounded-lg inline-block"
+        >
+          কল করুন
+        </a>
+      </div>
+    </header>
+
+    <main class="flex-grow">
+      <section class="bg-blue-900 text-white py-16 text-center">
+        <div class="container mx-auto px-4">
+          <h2 class="text-4xl font-bold mb-4">আমাদের সাথে যোগাযোগ করুন</h2>
+          <p class="text-lg opacity-90">
+            আপনার যেকোনো জিজ্ঞাসা বা সাহায্যের জন্য আমরা প্রস্তুত।
+          </p>
+        </div>
+      </section>
+
+      <section class="py-12 px-4">
+        <div class="container mx-auto max-w-6xl">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <!-- Contact Information -->
+            <div class="space-y-8">
+              <div>
+                <h3 class="text-2xl font-bold mb-6 text-blue-900">
+                  যোগাযোগের তথ্য
+                </h3>
+                <div class="space-y-6">
+                  <div class="flex items-start space-x-4">
+                    <div class="bg-blue-100 p-3 rounded-full">
+                      <i
+                        class="fas fa-map-marker-alt text-blue-600 text-xl"
+                      ></i>
+                    </div>
+                    <div>
+                      <h4 class="font-bold">ঠিকানা</h4>
+                      <p class="text-gray-600">
+                        আপনার দোকানের ঠিকানা এখানে দিন, ঢাকা, বাংলাদেশ।
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex items-start space-x-4">
+                    <div class="bg-blue-100 p-3 rounded-full">
+                      <i class="fas fa-phone-alt text-blue-600 text-xl"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-bold">ফোন</h4>
+                      <p class="text-gray-600">+৮৮০ ১৭৫৬-৪৬৭৬৭০</p>
+                    </div>
+                  </div>
+                  <div class="flex items-start space-x-4">
+                    <div class="bg-blue-100 p-3 rounded-full">
+                      <i class="fas fa-envelope text-blue-600 text-xl"></i>
+                    </div>
+                    <div>
+                      <h4 class="font-bold">ইমেইল</h4>
+                      <p class="text-gray-600">tanzimhardware@example.com</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div
+              class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100"
+            >
+              <h3 class="text-2xl font-bold mb-6 text-gray-800">মেসেজ পাঠান</h3>
+              <form action="#" class="space-y-4">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >আপনার নাম</label
+                  >
+                  <input
+                    type="text"
+                    placeholder="নাম লিখুন"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    required
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >মোবাইল নম্বর</label
+                  >
+                  <input
+                    type="tel"
+                    placeholder="নম্বর লিখুন"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    required
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >আপনার মেসেজ</label
+                  >
+                  <textarea
+                    rows="4"
+                    placeholder="কিছু লিখুন..."
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    required
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition duration-300"
+                >
+                  মেসেজ পাঠান
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer py-10 mt-auto">
+      <div class="container mx-auto px-4 text-center text-gray-400">
+        <h3 class="text-white text-xl font-bold mb-2">তানজীম হার্ডওয়্যার</h3>
+        <p class="mb-4">প্রোপ্রাইটর: তানজীম আহমেদ</p>
+        <p class="text-sm">
+          &copy; ২০২২ - ২০২৬ তানজিম আহমেদ। সর্বস্বত্ব সংরক্ষিত।
+        </p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

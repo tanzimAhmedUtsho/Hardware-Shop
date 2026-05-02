@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>মালিক প্রোফাইল - তানজীম আহমেদ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600;700&display=swap");
+      body {
+        font-family: "Hind Siliguri", sans-serif;
+      }
+      .premium-bg {
+        background: radial-gradient(circle at top right, #1e3a8a, #111827);
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+      .profile-img-glow {
+        box-shadow: 0 0 30px rgba(234, 179, 8, 0.3);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 min-h-screen flex flex-col">
+    <main class="flex-grow flex items-center justify-center p-6 md:p-12">
+      <div class="max-w-5xl w-full">
+        <!-- Navigation Link -->
+        <a
+          href="../index.html"
+          class="inline-flex items-center text-blue-900 font-bold mb-8 hover:text-blue-600 transition group"
+        >
+          <i
+            class="fas fa-arrow-left mr-2 transform group-hover:-translate-x-1 transition"
+          ></i>
+          হোম পেজে ফিরে যান
+        </a>
+
+        <!-- Premium Profile Card -->
+        <div
+          class="glass-card rounded-[3rem] shadow-2xl overflow-hidden flex flex-col md:flex-row border border-gray-100"
+        >
+          <!-- Sidebar / Visual Side -->
+          <div
+            class="md:w-1/3 premium-bg p-12 text-white flex flex-col items-center justify-center text-center"
+          >
+            <div class="relative mb-8">
+              <div
+                class="w-44 h-44 rounded-full border-4 border-yellow-500 p-1 profile-img-glow transform hover:rotate-6 transition duration-500"
+              >
+                <img
+                  src="https://ui-avatars.com/api/?name=Tanzim+Ahmed&background=1e3a8a&color=fff&size=512"
+                  alt="Tanizm Ahmed"
+                  class="w-full h-full rounded-full object-cover"
+                />
+              </div>
+              <div
+                class="absolute -bottom-2 -right-2 bg-yellow-500 text-blue-900 w-10 h-10 rounded-full flex items-center justify-center shadow-lg border-4 border-blue-900"
+              >
+                <i class="fas fa-check text-sm"></i>
+              </div>
+            </div>
+
+            <h1 class="text-3xl font-black mb-2 tracking-tight">
+              তানজীম আহমেদ
+            </h1>
+            <p
+              class="text-yellow-400 font-bold uppercase tracking-widest text-xs mb-8"
+            >
+              প্রতিষ্ঠাতা ও পরিচালক
+            </p>
+
+            <div class="flex space-x-5 text-2xl">
+              <a
+                href="#"
+                class="hover:text-yellow-400 transition transform hover:scale-110"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="#"
+                class="hover:text-yellow-400 transition transform hover:scale-110"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+              <a
+                href="#"
+                class="hover:text-yellow-400 transition transform hover:scale-110"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Content Side -->
+          <div class="md:w-2/3 p-10 md:p-16 bg-white">
+            <div class="mb-12">
+              <span
+                class="bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4 inline-block"
+                >ব্যবস্থাপনা পরিচালক</span
+              >
+              <h2 class="text-4xl font-black text-blue-950 mb-6 italic">
+                সততা ও গুণগত মানই <br /><span class="text-blue-600"
+                  >আমাদের মূল লক্ষ্য</span
+                >
+              </h2>
+              <p class="text-gray-600 text-lg leading-relaxed">
+                আসসালামু আলাইকুম। আমি তানজীম আহমেদ, ঝিনাইদহ জেলার একজন ক্ষুদ্র
+                উদ্যোক্তা। ২০২২ সালে "তানজীম হার্ডওয়্যার" প্রতিষ্ঠার পর থেকে
+                আমরা সবসময় গ্রাহকদের সেরা মানের অরিজিনাল টুলস সরবরাহ করতে
+                অঙ্গীকারবদ্ধ। আমাদের কাছে শুধু পণ্য নয়, বরং আস্থাই সবচেয়ে বড়
+                সম্পদ।
+              </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <!-- Info Box 1 -->
+              <div
+                class="flex items-start space-x-4 p-5 rounded-2xl bg-gray-50 border border-gray-100 hover:shadow-md transition"
+              >
+                <div class="text-blue-600 text-2xl mt-1">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-800">অফিস ঠিকানা</h4>
+                  <p class="text-sm text-gray-500">ঝিনাইদহ সদর, বাংলাদেশ</p>
+                </div>
+              </div>
+
+              <!-- Info Box 2 -->
+              <div
+                class="flex items-start space-x-4 p-5 rounded-2xl bg-gray-50 border border-gray-100 hover:shadow-md transition"
+              >
+                <div class="text-blue-600 text-2xl mt-1">
+                  <i class="fas fa-envelope-open-text"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-800">ইমেইল</h4>
+                  <p class="text-sm text-gray-500">tanzim@example.com</p>
+                </div>
+              </div>
+
+              <!-- Info Box 3 -->
+              <div
+                class="flex items-start space-x-4 p-5 rounded-2xl bg-gray-50 border border-gray-100 hover:shadow-md transition"
+              >
+                <div class="text-blue-600 text-2xl mt-1">
+                  <i class="fas fa-phone-volume"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-800">সরাসরি কথা বলুন</h4>
+                  <p class="text-sm text-gray-500">+৮৮০ ১৭৫৬-৪৬৭৬৭০</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-12">
+              <a
+                href="../Call_Korun/call.html"
+                class="bg-blue-900 text-white font-black px-12 py-4 rounded-2xl shadow-xl hover:bg-yellow-500 hover:text-blue-900 transition-all duration-300 inline-block"
+              >
+                সরাসরি মেসেজ দিন
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

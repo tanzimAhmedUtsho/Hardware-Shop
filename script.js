@@ -86,3 +86,74 @@ window.addEventListener("scroll", function () {
     header.classList.remove("shadow-2xl", "bg-blue-950");
   }
 });
+
+// ৭. ইন-পেজ লাইভ চ্যাট লজিক
+document.addEventListener("DOMContentLoaded", () => {
+  const chatWindow = document.getElementById("chat-window");
+  const chatTrigger = document.getElementById("chat-trigger");
+  const closeChat = document.getElementById("close-chat");
+  const sendBtn = document.getElementById("send-btn");
+  const chatInput = document.getElementById("chat-input");
+  const chatMessages = document.getElementById("chat-messages");
+
+  // চ্যাট উইন্ডো ওপেন/ক্লোজ
+  chatTrigger.addEventListener("click", () =>
+    chatWindow.classList.toggle("hidden"),
+  );
+  closeChat.addEventListener("click", () => chatWindow.classList.add("hidden"));
+
+  // মেসেজ পাঠানোর ফাংশন
+  function sendMessage() {
+    const text = chatInput.value.trim();
+    if (text === "") return;
+
+    // ইউজারের মেসেজ যোগ করা
+    appendMessage(text, "user");
+    chatInput.value = "";
+
+    // অটো-রিপ্লাই সিমুলেশন (১.৫ সেকেন্ড পর)
+    setTimeout(() => {
+      showTypingIndicator();
+      setTimeout(() => {
+        removeTypingIndicator();
+        appendMessage(
+          "ধন্যবাদ আপনার মেসেজের জন্য। আমাদের একজন প্রতিনিধি খুব শীঘ্রই আপনার সাথে যোগাযোগ করবেন। জরুরি প্রয়োজনে কল করুন: ০১৭৫৬৪৬৭৬৭০",
+          "bot",
+        );
+      }, 1500);
+    }, 500);
+  }
+
+  function appendMessage(text, sender) {
+    const msgDiv = document.createElement("div");
+    if (sender === "user") {
+      msgDiv.className =
+        "bg-blue-600 text-white p-3 rounded-lg rounded-tr-none ml-auto max-w-[85%]";
+    } else {
+      msgDiv.className =
+        "bg-blue-100 text-blue-900 p-3 rounded-lg rounded-tl-none max-w-[85%]";
+    }
+    msgDiv.innerText = text;
+    chatMessages.appendChild(msgDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight; // অটো স্ক্রল নিচে
+  }
+
+  function showTypingIndicator() {
+    const typingDiv = document.createElement("div");
+    typingDiv.id = "typing-indicator";
+    typingDiv.className = "text-xs text-gray-500 italic";
+    typingDiv.innerText = "সাপোর্ট টাইপ করছে...";
+    chatMessages.appendChild(typingDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+  function removeTypingIndicator() {
+    const indicator = document.getElementById("typing-indicator");
+    if (indicator) indicator.remove();
+  }
+
+  sendBtn.addEventListener("click", sendMessage);
+  chatInput.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") sendMessage();
+  });
+});

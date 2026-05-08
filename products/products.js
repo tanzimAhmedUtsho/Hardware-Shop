@@ -206,7 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateCart() {
     localStorage.setItem("tanzim_cart", JSON.stringify(cart));
-    // কার্ট সংখ্যা বাংলায় দেখানো
+
     cartCountLabel.innerText = cart.length
       .toString()
       .replace(/\d/g, (d) => "০১২৩৪৫৬৭৮৯"[d]);

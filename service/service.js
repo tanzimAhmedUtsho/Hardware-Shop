@@ -48,6 +48,19 @@ const services = [
 const container = document.createElement("div");
 container.className = "container mx-auto px-4 py-20";
 
+// ৩. নতুন ও সুন্দর ব্যাক বাটন (উপরে স্থানান্তরিত)
+const topNav = document.createElement("div");
+topNav.className = "mb-12 flex justify-start";
+topNav.innerHTML = `
+    <a href="../index.html" class="group flex items-center space-x-4 bg-white px-6 py-3 rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 transition-all duration-300">
+        <div class="w-10 h-10 bg-blue-50 text-blue-900 rounded-xl flex items-center justify-center group-hover:bg-blue-900 group-hover:text-white transition-all duration-300">
+            <i class="fas fa-home"></i>
+        </div>
+        <span class="font-bold text-blue-950">হোম পেজে ফিরে যান</span>
+    </a>
+`;
+container.appendChild(topNav);
+
 // ৩. হেডার তৈরি (JS দিয়ে)
 const header = document.createElement("div");
 header.innerHTML = `
@@ -129,25 +142,6 @@ processSection.innerHTML = `
     <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-yellow-500/10 rounded-full blur-3xl"></div>
 `;
 container.appendChild(processSection);
-
-// ৬. ব্যাক বাটন (Home Connection)
-const backBtnWrapper = document.createElement("div");
-backBtnWrapper.className = "text-center mt-16";
-
-const backBtn = document.createElement("button");
-backBtn.innerHTML = `<i class="fas fa-home mr-2"></i> হোম পেজে ফিরে যান`;
-backBtn.className =
-  "bg-blue-900 text-white px-10 py-4 rounded-full font-bold shadow-xl hover:bg-yellow-500 hover:text-blue-900 transition-all duration-300 transform active:scale-95";
-
-// কানেকশন লজিক
-backBtn.onclick = () => {
-  // ইনডেক্স ফাইলটি এক ধাপ পেছনে (Parent folder) থাকায় ../ ব্যবহার করা হয়েছে
-  window.location.href = "../index.html";
-};
-
-backBtnWrapper.appendChild(backBtn);
-container.appendChild(backBtnWrapper);
-
 // সবশেষে রুট এলিমেন্টে যুক্ত করা
 root.appendChild(container);
 
